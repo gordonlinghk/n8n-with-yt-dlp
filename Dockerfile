@@ -32,7 +32,7 @@ RUN ln -s /opt/ffmpeg/ffmpeg /usr/local/bin/ffmpeg && \
     ln -s /opt/ffmpeg/ffprobe /usr/local/bin/ffprobe
 
 # 由于 n8n 运行在 Zeabur 容器中，它无法直接访问您本地的文件，需要您将 cookie 文件放进容器。随代码一起复制：在项目根目录创建 cookies 文件夹，将 youtube_cookies.txt 放入其中，然后修改 Dockerfile
-COPY cookies/youtube_cookies.txt /home/node/youtube_cookies.txt
+COPY cookies/www.youtube.com_cookies.txt /home/node/www.youtube.com_cookies.txt
 
 
 USER node
