@@ -20,6 +20,9 @@ RUN curl -L https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-stati
 FROM docker.n8n.io/n8nio/n8n:latest
 USER root
 
+# 安装 python3 （如果镜像基于 Alpine）
+RUN apk add --no-cache python3
+
 # 复制 yt‑dlp 和 FFmpeg 到最终镜像
 COPY --from=downloader /usr/local/bin/yt-dlp /usr/local/bin/yt-dlp
 COPY --from=downloader /opt/ffmpeg /opt/ffmpeg
